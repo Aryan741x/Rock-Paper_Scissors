@@ -24,8 +24,14 @@
   </div>
   <h1 id="second">Plz Select TO Determine</h1>
   <h1 id="choose"></h1>
-  <h1 id="tally">Won:0 Lost:0 Draw:0</h1>
-  <button class="reset" onclick="document.location.reload(true);">RESET</button>
+  <h1 id="tally"></h1>
+  <button class="reset" onclick="
+  score.win=0;
+  score.draw=0;
+  score.lost=0;
+  localStorage.removeItem('score');
+  document.getElementById('tally').innerHTML=`Win:${score.win} Lost:${score.lost} Draw:${score.draw}`;
+  ">RESET</button>
   <script src="main.js"></script>
 </body>
 </html>
